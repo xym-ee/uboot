@@ -1,0 +1,14 @@
+
+cmd/
+
+generated/
+
+*.cmd
+
+*.o
+
+*.su
+
+*.cfgtmp
+
+*.a
