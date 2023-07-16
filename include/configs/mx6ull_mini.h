@@ -5,8 +5,8 @@
  *
  * SPDX-License-Identifier:	GPL-2.0+
  */
-#ifndef __MX6ULLEVK_CONFIG_H
-#define __MX6ULLEVK_CONFIG_H
+#ifndef __MX6ULL_MINI_CONFIG_H
+#define __MX6ULL_MINI_CONFIG_H
 
 
 #include <asm/arch/imx-regs.h>
@@ -113,7 +113,7 @@
 #if defined(CONFIG_SYS_BOOT_NAND)
 #define CONFIG_EXTRA_ENV_SETTINGS \
 	CONFIG_MFG_ENV_SETTINGS \
-	"panel=TFT43AB\0" \
+	"panel=TFT4384\0" \
 	"fdt_addr=0x83000000\0" \
 	"fdt_high=0xffffffff\0"	  \
 	"console=ttymxc0\0" \
@@ -137,7 +137,7 @@
 	"fdt_addr=0x83000000\0" \
 	"boot_fdt=try\0" \
 	"ip_dyn=yes\0" \
-	"panel=TFT43AB\0" \
+	"panel=TFT4384\0" \
 	"mmcdev="__stringify(CONFIG_SYS_MMC_ENV_DEV)"\0" \
 	"mmcpart=" __stringify(CONFIG_SYS_MMC_IMG_LOAD_PART) "\0" \
 	"mmcroot=" CONFIG_MMCROOT " rootwait rw\0" \
@@ -328,21 +328,21 @@
 #define CONFIG_CMD_MII
 #define CONFIG_FEC_MXC
 #define CONFIG_MII
-#define CONFIG_FEC_ENET_DEV		1
+#define CONFIG_FEC_ENET_DEV			1
 
 #if (CONFIG_FEC_ENET_DEV == 0)
-#define IMX_FEC_BASE			ENET_BASE_ADDR
-#define CONFIG_FEC_MXC_PHYADDR          0x2
-#define CONFIG_FEC_XCV_TYPE             RMII
+#define IMX_FEC_BASE				ENET_BASE_ADDR
+#define CONFIG_FEC_MXC_PHYADDR		0x0
+#define CONFIG_FEC_XCV_TYPE			RMII
 #elif (CONFIG_FEC_ENET_DEV == 1)
-#define IMX_FEC_BASE			ENET2_BASE_ADDR
+#define IMX_FEC_BASE				ENET2_BASE_ADDR
 #define CONFIG_FEC_MXC_PHYADDR		0x1
-#define CONFIG_FEC_XCV_TYPE		RMII
+#define CONFIG_FEC_XCV_TYPE			RMII
 #endif
-#define CONFIG_ETHPRIME			"FEC"
+#define CONFIG_ETHPRIME				"FEC"
 
 #define CONFIG_PHYLIB
-#define CONFIG_PHY_MICREL
+#define CONFIG_PHY_REALTEK
 #endif
 
 #define CONFIG_IMX_THERMAL
